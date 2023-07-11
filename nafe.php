@@ -25,10 +25,11 @@ $username="root";
 $password="";
 $database="my_project";
 $conn=mysqli_connect($servername,$username,$password,$database);
-$query=mysqli_query($conn,"select*from contact");
+$query=mysqli_query($conn,"select*from user");
 while($row=mysqli_fetch_array($query)){
-echo $row["name"]."\t".$row["phoneNumber"]."\t".$row["password"]."\t".$row["email"]."<br>";
+echo $row["Firstname"]."\t".$row["Surname"]."\t".$row["Username"]."\t".$row["Password"]."\t".$row["Email"]."\t".$row['Gender']."<br>";
 }
+
 ?>
         <h1 id="greeting"></h1>
     <header>
@@ -59,33 +60,37 @@ echo $row["name"]."\t".$row["phoneNumber"]."\t".$row["password"]."\t".$row["emai
             <LI>develooping web page</LI>
             <li>coding in c programing</li>
         </OL> 
-        <a href="skills.html"/>skills</a><br>
-        <a href="project skills.html"/>projects</a><br>
-        <a href="contact.html"/>contacts</a>
+        <a href="skills.html">skills</a><br>
+        <a href="project skills.html">projects</a><br>
+        <a href="contact.html">contacts</a>
         
 
 
 </SECTION>
 <section style="background-color: bisque ">
-    <h1 style="color: blue;">contact form</h1>
-    <form action="http://www.example.com/review.php" method="get">
-            
-        <p align="left">Name:
-        <input type="text" name="Student Name" size="20" maxlength="40"/></p>
-        
-        <p align="left">Phone number:
-        <input type="text"name="Phone number"</p>
-        <p align="left">Password
-        <input type="password"name="password"/></p>
-        <p align="left">Email:
-        <input type="email"name="Email"</p></p>
-        <p><u style="color:rgb(0, 132, 255)">Gender</u>:<br/>
-        <input type="radio"name="Gender"value="Female"required="required"/>female
-        <input type="radio"name="Gender"value="male"/>male</p>
+<form action="shaa.php" method="POST" >
+		<h3><b>Registration form</b></h3>
+		<label for="Firstname">Firstname</label>
+	    <input type="text" name="Firstname"><br><br>
 
-        <input type="submit"value="submit"/>
-        
-    </form>
+         <label for="Surname">Surname</label>
+	     <input type="text" name="Surname" ><br><br>
+
+	     <label for="Username">UserName</label>
+	     <input type="text" name="Username" >
+
+	    <p>Gender:</p>
+	    <input type="radio" name="Gender" value="Male"><label>Male</label>
+	    <input type="radio" name="Gender" value="Female"><label>Female</label>
+	    <input type="radio" name="Gender" value="Other"><label>Other</label></p>
+
+	    <label for="password">Password</label>
+	    <input type="password" name="password"><br><br>
+	    <label>Email</label>
+	    <input type="email" name="Email"><br><br>
+
+		<button>Submit</button>
+	</form>
 </section>
 </main>
 <footer class="nafe"><Fieldset>
@@ -102,4 +107,5 @@ echo $row["name"]."\t".$row["phoneNumber"]."\t".$row["password"]."\t".$row["emai
 </footer>
 
     </body>
-</html>
+    
+    </html>
